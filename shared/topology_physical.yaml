@@ -1,0 +1,42 @@
+---
+# Physical Network Topology Source of Truth
+# Format: List of links between Device:Interface pairs.
+# Used to ground the AI so it doesn't hallucinate connections.
+
+links:
+  # Link 1: Router to PC3 Network
+  - endpoints:
+      - device: router
+        interface: Ethernet0/1
+      - device: pc3
+        interface: eth0
+    subnet: 20.0.0.0/24
+
+  # Link 2: Router to PC1/PC2 Network (Switch implied or shared segment)
+  - endpoints:
+      - device: router
+        interface: Ethernet0/0
+      - device: pc1
+        interface: eth0
+      - device: pc2
+        interface: eth0
+    subnet: 40.0.0.0/24
+
+device_roles:
+  router:
+    type: cisco_ios
+    interfaces:
+      Ethernet0/0: Gateway for 40.0.0.99/24
+      Ethernet0/1: Gateway for 20.0.0.99/24
+  pc1:
+    type: vpcs
+    interfaces: 
+      eth0: Connected to 40.0.0.1/24
+  pc2:
+    type: vpcs
+    interfaces:
+      eth0: Connected to 40.0.0.2/24
+  pc3:
+    type: vpcs
+    interfaces:
+      eth0: Connected to 20.0.0.1/24

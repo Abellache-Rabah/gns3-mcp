@@ -1,0 +1,45 @@
+groups:
+  cisco:
+    platform: cisco_ios
+    connection_type: telnet
+  linux:
+    platform: linux
+    connection_type: telnet
+hosts:
+  router:
+    hostname: localhost
+    port: 5008
+    groups:
+    - cisco
+    data:
+      mgmt_ip: localhost
+      role: gateway
+      interfaces:
+        - name: FastEthernet0/0
+          description: "Uplink to pc1/pc2 segment"
+        - name: FastEthernet0/1
+          description: "Uplink to pc3 segment"
+  pc1:
+    hostname: localhost
+    port: 5000
+    groups:
+    - linux
+    data:
+      ip: 50.0.0.10
+      gateway: 50.0.0.99 (router)
+  pc2:
+    hostname: localhost
+    port: 5002
+    groups:
+    - linux
+    data:
+      ip: 50.0.0.20
+      gateway: 50.0.0.99 (router)
+  pc3:
+    hostname: localhost
+    port: 5007
+    groups:
+    - linux
+    data:
+      ip: 20.0.0.10
+      gateway: 20.0.0.99 (router)

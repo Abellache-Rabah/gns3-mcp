@@ -1,0 +1,46 @@
+{
+    "mcpServers": {
+        "verifier": {
+            "command": "/home/rabah/Documents/mcp/server 1/servers/verifier/.venv/bin/python",
+            "args": [
+                "/home/rabah/Documents/mcp/server 1/servers/verifier/server.py"
+            ]
+        },
+        "deployer": {
+            "command": "/home/rabah/Documents/mcp/server 1/servers/verifier/.venv/bin/python",
+            "args": [
+                "/home/rabah/Documents/mcp/server 1/servers/deployer/server.py"
+            ]
+        },
+        "observer": {
+            "command": "/home/rabah/Documents/mcp/server 1/servers/verifier/.venv/bin/python",
+            "args": [
+                "/home/rabah/Documents/mcp/server 1/servers/observer/server.py"
+            ]
+        },
+        "librarian": {
+            "command": "/home/rabah/Documents/mcp/server 1/servers/verifier/.venv/bin/python",
+            "args": [
+                "/home/rabah/Documents/mcp/server 1/servers/librarian/server.py"
+            ]
+        },
+        "ipam": {
+            "command": "/home/rabah/Documents/mcp/server 1/servers/verifier/.venv/bin/python",
+            "args": [
+                "/home/rabah/Documents/mcp/server 1/servers/ipam/server.py"
+            ]
+        },
+        "auditor": {
+            "command": "/home/rabah/Documents/mcp/server 1/servers/verifier/.venv/bin/python",
+            "args": [
+                "/home/rabah/Documents/mcp/server 1/servers/auditor/server.py"
+            ]
+        },
+        "traffic_gen": {
+            "command": "/home/rabah/Documents/mcp/server 1/servers/verifier/.venv/bin/python",
+            "args": [
+                "/home/rabah/Documents/mcp/server 1/servers/traffic_gen/server.py"
+            ]
+        }
+    }
+}
